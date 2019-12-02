@@ -23,6 +23,7 @@
     "path": "0.12.7",
     "react": "16.8.1",
     "react-dom": "16.8.1",
+    "request": "2.88.0",
     "storybook": "5.1.11",
     "styled-components": "4.4.1"
   },

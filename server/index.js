@@ -14,6 +14,8 @@ const webpackDevMiddleware = require('webpack-dev-middleware')
 const config = require('../webpack.config.js')
 const compiler = webpack(config)
 
+const api_call_helper = require('./api_call_helper')
+
 app.use(cors())
 app.use(bodyParser.json())
 app.use(express.static(DIST_DIR))
@@ -25,14 +27,28 @@ if (config.mode === 'development') {
   }))
 }
 
-const mockResponse = {
-  foo: 'bar',
-  bar: 'foo'
-}
-
 app.get('/api', (req, res) => {
-  res.send(mockResponse)
+  const baseUrl = 'http://www.recipepuppy.com/api'
+  let url = baseUrl
+  if (req.query.q && !req.query.p) {
+    url = `${baseUrl}/?q=${req.query.q}`
+  }
+  if(!req.query.q && req.query.p) {
+    url = `${baseUrl}/?p=${req.query.p}`
+  }
+  if(req.query.q && req.query.p) {
+    url = `${baseUrl}/?q=${req.query.q}&p=${req.query.p}`
+  }
+
+  api_call_helper.api_call(url)
+    .then(response => {
+      res.json(response)
+    })
+    .catch(error => {
+      res.send(error)
+    })
 })
+
 app.get('/', (req, res) => {
   res.sendFile(HTML_FILE)
 })
