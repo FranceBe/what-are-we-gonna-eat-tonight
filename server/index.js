@@ -27,7 +27,7 @@ if (config.mode === 'development') {
   }))
 }
 
-app.get('/api', (req, res) => {
+app.get('/api/puppy', (req, res) => {
   const baseUrl = 'http://www.recipepuppy.com/api'
   let url = baseUrl
   if (req.query.q && !req.query.p) {
