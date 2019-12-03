@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`H2 Styled component H2Default should match snapshot 1`] = `
+.c0 {
+  font-size: 1.25rem;
+  text-align: center;
+  text-shadow: 1px 1px #EBA789;
+}
+
+<h2
+  className="c0"
+/>
+`;

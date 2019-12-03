@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonBurgerShape styled components BurgerShape should match snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px 50px 10px 10px;
+  background: linear-gradient(0deg,#EBA789 15%,#50C92C 27%,#EE6663 47%,#F6FA19 45%,#50C92C 60%,#EBA789 79%);
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`ButtonBurgerShape styled components ButtonText should match snapshot 1`] = `
+.c0 {
+  background-color: rgba(255,255,255,0.7);
+  padding: 5px;
+  margin-bottom: 5px;
+  font-size: 0.875rem;
+}
+
+<span
+  className="c0"
+/>
+`;

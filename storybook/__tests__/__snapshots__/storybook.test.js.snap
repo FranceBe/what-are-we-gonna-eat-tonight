@@ -1,9 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots ButtonBurgerShape Default 1`] = `
+<ForwardRef(ButtonBurgerShapecomponent__BurgerShape)
+  onClick={[Function]}
+>
+  <ForwardRef(ButtonBurgerShapecomponent__ButtonText)>
+     20 
+  </ForwardRef(ButtonBurgerShapecomponent__ButtonText)>
+</ForwardRef(ButtonBurgerShapecomponent__BurgerShape)>
+`;
+
 exports[`Storyshots H1 Default 1`] = `
 <ForwardRef(H1component__H1Default)>
    Hello I am a Title 
 </ForwardRef(H1component__H1Default)>
+`;
+
+exports[`Storyshots H2 Default 1`] = `
+<ForwardRef(H2component__H2Default)>
+   Hello I am a Title 
+</ForwardRef(H2component__H2Default)>
+`;
+
+exports[`Storyshots RecipeCard Default 1`] = `
+<ForwardRef(RecipeCardcomponent__CardContainer)>
+  <ForwardRef(RecipeCardcomponent__Title)>
+    Chocolate Cake
+  </ForwardRef(RecipeCardcomponent__Title)>
+  <ForwardRef(RecipeCardcomponent__ImageContainer)>
+    <img
+      alt="recipe thumbnail"
+      src="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    />
+  </ForwardRef(RecipeCardcomponent__ImageContainer)>
+  chocolat, cake, chocolate cake
+  <br />
+  <a
+    href="http://siteweb.site.web"
+  >
+     Lien vers la recette 
+  </a>
+  <br />
+</ForwardRef(RecipeCardcomponent__CardContainer)>
 `;
 
 exports[`Storyshots SelectionButton Default 1`] = `
