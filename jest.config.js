@@ -1,5 +1,4 @@
-const { resolve } = require('path')
-const baseDir = resolve(__dirname, '..')
+const baseDir = __dirname
 
 module.exports = {
   clearMocks: true,
@@ -17,19 +16,23 @@ module.exports = {
       statements: 0,
     },
   },
-  coverageDirectory: `${resolve(baseDir)}/coverage`,
+  coverageDirectory: `${baseDir}/coverage`,
   coverageReporters: ['text', 'html'],
   moduleDirectories: [
     'node_modules',
     'src',
+    'storybook',
   ],
-  roots: ['<rootDir>/src', '<rootDir>/storybook'],
+  rootDir: `${baseDir}`,
+  roots: [`${baseDir}/src`, `${baseDir}/storybook`],
   moduleNameMapper: {
+    '\\.(jpg|png|jpeg)$': `${baseDir}/utils/__mocks__/JPG_PNG.stub.js`,
+    '\\.(ttf|woff|woff2)$': `${baseDir}/utils/__mocks__/fonts.stub.js`,
+    '\\.svg$': `${baseDir}/src/utils/__mocks__/svg.stub.js`,
+    '^styles/(.*)$': `${baseDir}/styles/$1`,
+    '^assets/(.*)$': `${baseDir}/assets/$1`,
   },
-  setupFilesAfterEnv: [
-  ],
-  setupFiles: [
-    // TODO : special config for storybook if needed
-  ],
-  testRegex: 'tests/.*\\.test\\.js$',
-};
+  setupFilesAfterEnv: [],
+  setupFiles: [`${baseDir}/storybook/jest.setup.js`],
+  testRegex: '__tests__/.*\\.test\\.js$',
+}

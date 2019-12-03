@@ -1,6 +1,15 @@
-import { configure } from '@storybook/react'
+import React from 'react'
+import {configure, addDecorator} from '@storybook/react'
+import { GlobalStyle } from 'styles/global-styles'
 
-configure(require.context('../src', true, /\.stories\.js$/), module)
+if (process.env.NODE_ENV !== 'test') {
+  addDecorator(story => (
+    <>
+        <GlobalStyle />
+        {story()}
+    </>
+  ))
+}
 
 const loadStories = () => {
   const req = require.context('..', true, /(src|storybook)\/.*\.story\.js$/)

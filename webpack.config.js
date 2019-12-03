@@ -22,38 +22,30 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  '@babel/preset-env',
-                  {
-                    'modules': 'false',//commonjs,amd,umd,systemjs,auto
-                    'useBuiltIns': 'usage',
-                    'targets': '> 0.25%, not dead',
-                    'corejs': 3
-                  }
-                ]
-              ]
-            }
-          }
-        ]
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        test: /\.(js|jsx)$/,
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader',
-        ],
+        loader: 'html-loader',
+        test: /\.html$/,
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        loader: 'file-loader?name=assets/img/[name].[ext]',
+        test: /\.(png|ttf|jpg|gif|ico)$/,
       },
     ],
   },
   resolve: {
     modules: ['src', 'node_modules'],
-    alias: {}
+    alias: {
+      styles: path.join(__dirname, 'styles'),
+      assets: path.join(__dirname, 'assets'),
+    }
   },
 }
 

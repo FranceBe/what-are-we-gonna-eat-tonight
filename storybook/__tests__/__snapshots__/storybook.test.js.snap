@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots StyleGuide Colors 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "StyleGuidestory__StorybookDiv-t49j7l-0",
+        "isStatic": false,
+        "rules": Array [],
+      },
+      "displayName": "StyleGuidestory__StorybookDiv",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "StyleGuidestory__StorybookDiv-t49j7l-0",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  <ForwardRef(StyleGuidestory__StorybookTitle)>
+    Couleurs
+  </ForwardRef(StyleGuidestory__StorybookTitle)>
+  <ForwardRef(StyleGuidestory__ColorsContainer)>
+    <ColorsComponent />
+  </ForwardRef(StyleGuidestory__ColorsContainer)>
+</StyledComponent>
+`;
+
+exports[`Storyshots StyleGuide Polices 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "StyleGuidestory__StorybookDiv-t49j7l-0",
+        "isStatic": false,
+        "rules": Array [],
+      },
+      "displayName": "StyleGuidestory__StorybookDiv",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "StyleGuidestory__StorybookDiv-t49j7l-0",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  <ForwardRef(StyleGuidestory__StorybookTitle)>
+    Polices
+  </ForwardRef(StyleGuidestory__StorybookTitle)>
+  <ForwardRef(StyleGuidestory__PlayfairDisplaytRegular)>
+     Ceci est la police 1 Regular 
+  </ForwardRef(StyleGuidestory__PlayfairDisplaytRegular)>
+  <br />
+  <ForwardRef(StyleGuidestory__PlayfairDisplayBold)>
+     Ceci est la police 1 Bold 
+  </ForwardRef(StyleGuidestory__PlayfairDisplayBold)>
+  <br />
+</StyledComponent>
+`;

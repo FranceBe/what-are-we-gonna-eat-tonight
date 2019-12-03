@@ -12,7 +12,7 @@ export class App extends React.PureComponent {
 
   render() {
     return(
-      <h1> Hello my new world </h1>
+      <span> Hello my new world </span>
     )
   }
 }
