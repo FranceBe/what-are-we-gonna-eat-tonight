@@ -1,5 +1,5 @@
 import React from 'react'
-import {storiesOf} from '@storybook/react'
+import { storiesOf } from '@storybook/react'
 import styled from 'styled-components'
 
 import * as styleVariables from 'styles/variables'
@@ -53,7 +53,7 @@ const Color = styled.div`
   border: 1px solid grey;
 `
 // eslint-disable-next-line react/prop-types
-const ColorComponent = ({name, color}) => (
+const ColorComponent = ({ name, color }) => (
   <OneColorContainer key={`${name}-${color}`}>
     <Label>{name.split('_').join(' ')}</Label> {/* eslint-disable-line react/prop-types */}
     <Label> {color} </Label>

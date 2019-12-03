@@ -1,4 +1,5 @@
 import React from 'react'
+import H1 from 'components/H1'
 
 export class App extends React.PureComponent {
   // componentDidMount() {
@@ -12,7 +13,7 @@ export class App extends React.PureComponent {
 
   render() {
     return(
-      <span> Hello my new world </span>
+      <H1> Hello my new world </H1>
     )
   }
 }

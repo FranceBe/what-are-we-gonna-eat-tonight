@@ -1,12 +1,12 @@
 import React from 'react'
-import {configure, addDecorator} from '@storybook/react'
+import { configure, addDecorator } from '@storybook/react'
 import { GlobalStyle } from 'styles/global-styles'
 
 if (process.env.NODE_ENV !== 'test') {
   addDecorator(story => (
     <>
-        <GlobalStyle />
-        {story()}
+      <GlobalStyle/>
+      {story()}
     </>
   ))
 }

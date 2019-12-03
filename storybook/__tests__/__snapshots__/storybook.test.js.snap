@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots H1 Default 1`] = `
+<ForwardRef(H1component__H1Default)>
+   Hello I am a Title 
+</ForwardRef(H1component__H1Default)>
+`;
+
 exports[`Storyshots StyleGuide Colors 1`] = `
 <StyledComponent
   forwardedComponent={

@@ -9,3 +9,11 @@ export const colors = {
   primary_default: palette.tacao,
   primary_dark: palette.kabul,
 }
+
+export const fontSizes = {
+  px_30: '1.875rem',
+}
+
+export const spaces = {
+  xtraSmall: '1px',
+}

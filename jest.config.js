@@ -32,7 +32,9 @@ module.exports = {
     '^styles/(.*)$': `${baseDir}/styles/$1`,
     '^assets/(.*)$': `${baseDir}/assets/$1`,
   },
-  setupFilesAfterEnv: [],
+  setupFilesAfterEnv: [
+    `${baseDir}/jest.setup.js`,
+  ],
   setupFiles: [`${baseDir}/storybook/jest.setup.js`],
   testRegex: '__tests__/.*\\.test\\.js$',
 }
