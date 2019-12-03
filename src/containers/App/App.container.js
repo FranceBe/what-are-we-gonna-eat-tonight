@@ -1,14 +1,14 @@
 import React from 'react'
 
 export class App extends React.PureComponent {
-  componentDidMount() {
-    fetch('api/puppy')
-      .then(res => res.json())
-      .then(data => console.log(data.results))
-      .catch(err => {
-        throw Error(err)
-      })
-  }
+  // componentDidMount() {
+  //   fetch('api/puppy')
+  //     .then(res => res.json())
+  //     .then(data => console.log(data.results))
+  //     .catch(err => {
+  //       throw Error(err)
+  //     })
+  // }
 
   render() {
     return(

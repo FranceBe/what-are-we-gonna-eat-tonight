@@ -1,11 +1,11 @@
-const webpack = require('webpack');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const path = require('path')
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html"
-});
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+  template: './src/index.html',
+  filename: './index.html'
+})
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 module.exports = {
   mode: process.env.NODE_ENV || 'production',
   entry: {
@@ -15,8 +15,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'built'),
-    filename: "[name].js",
-    publicPath: "/",
+    filename: '[name].js',
+    publicPath: '/',
   },
   plugins: [htmlPlugin, new CleanWebpackPlugin()],
   module: {
@@ -45,15 +45,15 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-          use: [
-            'file-loader',
-          ],
-        },
+        use: [
+          'file-loader',
+        ],
+      },
     ],
   },
   resolve: {
     modules: ['src', 'node_modules'],
     alias: {}
   },
-};
+}
 

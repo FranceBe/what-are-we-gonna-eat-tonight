@@ -6,12 +6,12 @@ module.exports = {
   ** which gets resolved or rejected based
   ** on the result from the API
   */
-  api_call : function(url){
+  api_call: function (url) {
     return new Promise((resolve, reject) => {
       request(url, { json: true }, (err, res, body) => {
         if (err) reject(err)
         resolve(body)
-      });
+      })
     })
   }
 }
