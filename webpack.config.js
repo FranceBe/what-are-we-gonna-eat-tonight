@@ -1,7 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const path = require('path')
-import '@babel/polyfill'
-import 'jest-styled-components'
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './src/index.html',
