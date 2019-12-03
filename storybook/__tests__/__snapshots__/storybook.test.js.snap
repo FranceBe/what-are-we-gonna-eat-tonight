@@ -6,6 +6,40 @@ exports[`Storyshots H1 Default 1`] = `
 </ForwardRef(H1component__H1Default)>
 `;
 
+exports[`Storyshots SelectionButton Default 1`] = `
+<ForwardRef(SelectionButtoncomponent__ButtonsContainer)>
+  <ForwardRef(SelectionButtoncomponent__SingleButton)
+    isActive={false}
+    onClick={[Function]}
+  >
+    option 1
+  </ForwardRef(SelectionButtoncomponent__SingleButton)>
+  <ForwardRef(SelectionButtoncomponent__SingleButton)
+    isActive={false}
+    onClick={[Function]}
+  >
+    option 2
+  </ForwardRef(SelectionButtoncomponent__SingleButton)>
+</ForwardRef(SelectionButtoncomponent__ButtonsContainer)>
+`;
+
+exports[`Storyshots SelectionButton Option 2 is active 1`] = `
+<ForwardRef(SelectionButtoncomponent__ButtonsContainer)>
+  <ForwardRef(SelectionButtoncomponent__SingleButton)
+    isActive={false}
+    onClick={[Function]}
+  >
+    option 1
+  </ForwardRef(SelectionButtoncomponent__SingleButton)>
+  <ForwardRef(SelectionButtoncomponent__SingleButton)
+    isActive={true}
+    onClick={[Function]}
+  >
+    option 2
+  </ForwardRef(SelectionButtoncomponent__SingleButton)>
+</ForwardRef(SelectionButtoncomponent__ButtonsContainer)>
+`;
+
 exports[`Storyshots StyleGuide Colors 1`] = `
 <StyledComponent
   forwardedComponent={

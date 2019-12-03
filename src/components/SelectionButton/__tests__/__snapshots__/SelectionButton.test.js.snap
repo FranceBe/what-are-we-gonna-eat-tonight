@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectionButton styled components ButtonsContainer should match snapshot 1`] = `
+.c0 button:first-of-type {
+  border-radius: 10px 0 0 10px;
+  border: 1px solid #EBA789;
+}
+
+.c0 button:last-of-type {
+  border-radius: 0 10px 10px 0;
+  border-top: 1px solid #EBA789;
+  border-right: 1px solid #EBA789;
+  border-bottom: 1px solid #EBA789;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`SelectionButton styled components SingleButton should match snapshot 1`] = `
+.c0 {
+  background-color: #FFF;
+  color: #5F4C44;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  height: 50px;
+  width: 300px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: none;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+<button
+  className="c0"
+/>
+`;

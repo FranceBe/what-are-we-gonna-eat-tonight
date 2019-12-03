@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { colors } from 'styles/variables'
+import { colors, spaces } from 'styles/variables'
 
 // PlayfairDisplay
 import PlayfairDisplaytRegular from 'assets/fonts/PlayfairDisplay-Regular.ttf'
@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     background-color: ${colors.primary_light};
-    margin: 0;
+    margin: ${spaces.small};
     color: ${colors.primary_dark};
     font-family: 'PlayfairDisplay', sans-serif;
   }

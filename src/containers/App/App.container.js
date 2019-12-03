@@ -1,5 +1,6 @@
 import React from 'react'
 import H1 from 'components/H1'
+import SelectionButton from 'components/SelectionButton'
 
 export class App extends React.PureComponent {
   // componentDidMount() {
@@ -11,9 +12,27 @@ export class App extends React.PureComponent {
   //     })
   // }
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedOption: '',
+    }
+  }
+
+  handleSelectOption = option => {
+    this.setState({ selectedOption: option })
+  }
   render() {
     return(
-      <H1> Hello my new world </H1>
+      <>
+        <H1> Qu&apos;est-ce qu&apos;on mange ce soir ? </H1>
+        <SelectionButton
+          firstOption={'Donnez moi des idées!'}
+          secondOption={'J\'ai une envie de...'}
+          onSelect={this.handleSelectOption}
+          selectedOption={this.state.selectedOption}
+        />
+      </>
     )
   }
 }
