@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeCard style-components CardContainer should match snapshot 1`] = `
+.c0 {
+  background-color: #FFF;
+  border: 1px solid #5F4C44;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (min-width:48em) {
+  .c0 {
+    width: 45%;
+  }
+}
+
+@media (min-width:62em) {
+  .c0 {
+    width: 30%;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`RecipeCard style-components ImageContainer should match snapshot 1`] = `
+.c0 {
+  min-width: 200px;
+  min-height: 200px;
+  background-image: url(undefined);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`RecipeCard style-components ImageIngredientsAndLink should match snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`RecipeCard style-components IngredientsAndLink should match snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 10px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`RecipeCard style-components PlaceHolder should match snapshot 1`] = `
+.c0 {
+  min-width: 200px;
+  min-height: 200px;
+  background-image: url(undefined);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #FEFEF1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`RecipeCard style-components Title should match snapshot 1`] = `
+.c0 {
+  font-weight: 700;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  padding: 5px;
+}
+
+<div
+  className="c0"
+/>
+`;

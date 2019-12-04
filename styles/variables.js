@@ -28,6 +28,8 @@ export const spaces = {
   xtraSmall: '1px',
   small: '5px',
   medium: '10px',
+  regular: '20px',
   large: '50px',
+  xtraLarge: '200px',
   xxtraLarge: '300px',
 }

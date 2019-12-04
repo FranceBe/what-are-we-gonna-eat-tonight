@@ -9,6 +9,7 @@ const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `
 
 const GET_RANDOM_RECIPES = 'Donnez moi des idées!'

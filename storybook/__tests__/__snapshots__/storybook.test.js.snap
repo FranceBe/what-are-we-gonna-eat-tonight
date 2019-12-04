@@ -27,20 +27,19 @@ exports[`Storyshots RecipeCard Default 1`] = `
   <ForwardRef(RecipeCardcomponent__Title)>
     Chocolate Cake
   </ForwardRef(RecipeCardcomponent__Title)>
-  <ForwardRef(RecipeCardcomponent__ImageContainer)>
-    <img
-      alt="recipe thumbnail"
-      src="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+  <ForwardRef(RecipeCardcomponent__ImageIngredientsAndLink)>
+    <ForwardRef(RecipeCardcomponent__ImageContainer)
+      image="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
     />
-  </ForwardRef(RecipeCardcomponent__ImageContainer)>
-  chocolat, cake, chocolate cake
-  <br />
-  <a
-    href="http://siteweb.site.web"
-  >
-     Lien vers la recette 
-  </a>
-  <br />
+    <ForwardRef(RecipeCardcomponent__IngredientsAndLink)>
+      chocolat, cake, chocolate cake
+      <a
+        href="http://siteweb.site.web"
+      >
+         Lien vers la recette 
+      </a>
+    </ForwardRef(RecipeCardcomponent__IngredientsAndLink)>
+  </ForwardRef(RecipeCardcomponent__ImageIngredientsAndLink)>
 </ForwardRef(RecipeCardcomponent__CardContainer)>
 `;
 

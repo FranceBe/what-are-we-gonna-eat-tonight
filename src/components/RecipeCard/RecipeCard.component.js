@@ -1,23 +1,54 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { colors, spaces } from 'styles/variables'
+import { mediaMin } from 'styles/mediaMixins'
 
-const CardContainer = styled.div`
+export const CardContainer = styled.div`
   background-color: ${colors.neutral_lightest};
   border: ${spaces.xtraSmall} solid ${colors.primary_dark};
   display: flex;
   flex-direction: column;
+  width: 100%;
+  ${mediaMin.md(css`
+    width: 45%;
+  `)};
+  ${mediaMin.lg(css`
+    width: 30%;
+  `)};
 `
-const Title = styled.div`
+export const Title = styled.div`
   font-weight: 700;
   text-decoration: underline;
   align-self: center;
+  padding: ${spaces.small};
 `
 
-const ImageContainer = styled.div`
-  max-width: 50px;
-  background: 
+export const ImageContainer = styled.div`
+  min-width: ${spaces.xtraLarge};
+  min-height: ${spaces.xtraLarge};
+  background-image: ${props => `url(${props.image})`};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`
+export const PlaceHolder = styled(ImageContainer)`
+  background-color: ${colors.primary_light};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+export const ImageIngredientsAndLink = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: ${spaces.medium};
+`
+
+export const IngredientsAndLink = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: ${spaces.medium};
 `
 
 export class RecipeCard extends React.PureComponent {
@@ -32,11 +63,17 @@ export class RecipeCard extends React.PureComponent {
     return (
       <CardContainer>
         <Title>{this.props.title}</Title>
-        <ImageContainer><img src={this.props.thumbnail} alt={'recipe thumbnail'}/></ImageContainer>
-        {this.props.ingredients}
-        <br/>
-        <a href={this.props.href}> Lien vers la recette </a>
-        <br/>
+        <ImageIngredientsAndLink>
+          {this.props.thumbnail
+            ? <ImageContainer image={this.props.thumbnail}/>
+            : <PlaceHolder> <span>Pas d&apos;image disponible :( </span></PlaceHolder>
+          }
+
+          <IngredientsAndLink>
+            {this.props.ingredients}
+            <a href={this.props.href}> Lien vers la recette </a>
+          </IngredientsAndLink>
+        </ImageIngredientsAndLink>
       </CardContainer>
     )
   }
