@@ -30,6 +30,7 @@ export const ButtonText = styled.span`
   margin-bottom: ${spaces.small};
   font-size: ${fontSizes.px_14}
 `
+
 export class ButtonBurgerShape extends React.PureComponent {
   static propTypes = {
     children: PropTypes.any.isRequired,
@@ -37,16 +38,17 @@ export class ButtonBurgerShape extends React.PureComponent {
   }
 
   onActionClick = e => {
-    if(this.props.onClick) {
+    if (this.props.onClick) {
       this.props.onClick()
-    }
-    else {
+    } else {
       e.preventDefault()
     }
   }
+
   render() {
+    const { ...rest } = this.props
     return (
-      <BurgerShape onClick={this.onActionClick}>
+      <BurgerShape onClick={this.onActionClick} {...rest}>
         <ButtonText>{this.props.children}</ButtonText>
       </BurgerShape>
     )

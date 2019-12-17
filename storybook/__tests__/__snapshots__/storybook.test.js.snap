@@ -22,6 +22,17 @@ exports[`Storyshots H2 Default 1`] = `
 </ForwardRef(H2component__H2Default)>
 `;
 
+exports[`Storyshots Input Default 1`] = `
+<ForwardRef(Inputcomponent__InputContainer)>
+  <ForwardRef(Inputcomponent__Label)>
+    Insert here something
+  </ForwardRef(Inputcomponent__Label)>
+  <ForwardRef(Inputcomponent__InputField)
+    label="Insert here something"
+  />
+</ForwardRef(Inputcomponent__InputContainer)>
+`;
+
 exports[`Storyshots RecipeCard Default 1`] = `
 <ForwardRef(RecipeCardcomponent__CardContainer)>
   <ForwardRef(RecipeCardcomponent__Title)>
@@ -41,6 +52,192 @@ exports[`Storyshots RecipeCard Default 1`] = `
     </ForwardRef(RecipeCardcomponent__IngredientsAndLink)>
   </ForwardRef(RecipeCardcomponent__ImageIngredientsAndLink)>
 </ForwardRef(RecipeCardcomponent__CardContainer)>
+`;
+
+exports[`Storyshots RecipeCardsContainer with 1 cards 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "RecipeCardsContainercomponent__RecipeCardsContainer-sc-10i2ub7-0",
+        "isStatic": false,
+        "rules": Array [
+          "display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;margin:",
+          "20px",
+          " 0;",
+        ],
+      },
+      "displayName": "RecipeCardsContainercomponent__RecipeCardsContainer",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "RecipeCardsContainercomponent__RecipeCardsContainer-sc-10i2ub7-0",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+</StyledComponent>
+`;
+
+exports[`Storyshots RecipeCardsContainer with 5 cards 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "RecipeCardsContainercomponent__RecipeCardsContainer-sc-10i2ub7-0",
+        "isStatic": false,
+        "rules": Array [
+          "display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;margin:",
+          "20px",
+          " 0;",
+        ],
+      },
+      "displayName": "RecipeCardsContainercomponent__RecipeCardsContainer",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "RecipeCardsContainercomponent__RecipeCardsContainer-sc-10i2ub7-0",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+</StyledComponent>
+`;
+
+exports[`Storyshots RecipeCardsContainer with 10 cards 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "RecipeCardsContainercomponent__RecipeCardsContainer-sc-10i2ub7-0",
+        "isStatic": false,
+        "rules": Array [
+          "display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;margin:",
+          "20px",
+          " 0;",
+        ],
+      },
+      "displayName": "RecipeCardsContainercomponent__RecipeCardsContainer",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "RecipeCardsContainercomponent__RecipeCardsContainer-sc-10i2ub7-0",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+  <RecipeCard
+    href="http://siteweb.site.web"
+    ingredients="chocolat, cake, chocolate cake"
+    thumbnail="https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg"
+    title="Chocolate Cake"
+  />
+</StyledComponent>
 `;
 
 exports[`Storyshots SelectionButton Default 1`] = `

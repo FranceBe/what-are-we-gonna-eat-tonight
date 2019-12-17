@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component style InputContainer should match snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 70%;
+  width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Input component style InputField should match snapshot 1`] = `
+.c0 {
+  margin-left: 10px;
+  height: 30px;
+  width: 50%;
+}
+
+.c0:focus {
+  outline: #EBA789 auto 5px;
+}
+
+<input
+  className="c0"
+/>
+`;
+
+exports[`Input component style Label should match snapshot 1`] = `
+.c0 {
+  font-size: 1.25rem;
+  text-align: center;
+  text-shadow: 1px 1px #EBA789;
+}
+
+<h2
+  className="c0"
+/>
+`;

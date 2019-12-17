@@ -1,11 +1,12 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
-import RandomRecipes,
-{ RecipeCardsContainer }
-  from 'containers/RandomRecipes/RandomRecipes.container'
+import RandomRecipes from 'containers/RandomRecipes/RandomRecipes.container'
+import { RecipeCardsContainer } from 'components/RecipeCardsContainer'
 import H2 from 'components/H2'
 import ButtonBurgerShape from 'components/ButtonBurgerShape'
+import * as randomService from 'services/random.service'
+
 import RecipeCard from 'components/RecipeCard'
 
 describe('RandomRecipes', () => {
@@ -66,9 +67,8 @@ describe('RandomRecipes', () => {
       beforeAll(() => {
         RandomRecipesWrapper = shallow(<RandomRecipes/>)
         getRandomIntSpy =
-          jest.spyOn(RandomRecipesWrapper.instance(), 'getRandomInt').mockImplementation(() => 12)
+          jest.spyOn(randomService, 'getRandomInt').mockImplementation(() => 12)
         fetch.mockResponse(JSON.stringify({ results: [...listOfRecipes] }))
-
       })
       afterAll(() => {
         jest.clearAllMocks()

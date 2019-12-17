@@ -1,17 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
 import H2 from 'components/H2'
 import ButtonBurgerShape from 'components/ButtonBurgerShape'
 import RecipeCard from 'components/RecipeCard'
-import { spaces } from 'styles/variables'
+import { getRandomInt } from 'services/random.service'
+import { RecipeCardsContainer } from 'components/RecipeCardsContainer'
 
-export const RecipeCardsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: ${spaces.regular} 0;
-`
 
 export class RandomRecipes extends React.PureComponent {
   constructor(props) {
@@ -21,12 +14,8 @@ export class RandomRecipes extends React.PureComponent {
     }
   }
 
-  getRandomInt = max => {
-    return Math.floor(Math.random() * Math.floor(max))
-  }
-
   getRandomRecipes = () => {
-    const randomPage = this.getRandomInt(50)
+    const randomPage = getRandomInt(50)
     fetch(`api/puppy/?p=${randomPage}`)
       .then(res => res.json())
       .then(data => this.setState({ listOfRecipes: data.results }))

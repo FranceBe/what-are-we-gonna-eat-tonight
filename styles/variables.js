@@ -29,6 +29,7 @@ export const spaces = {
   small: '5px',
   medium: '10px',
   regular: '20px',
+  regular_large: '30px',
   large: '50px',
   xtraLarge: '200px',
   xxtraLarge: '300px',

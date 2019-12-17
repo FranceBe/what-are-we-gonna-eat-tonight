@@ -2,6 +2,7 @@ import React from 'react'
 import H1 from 'components/H1'
 import SelectionButton from 'components/SelectionButton'
 import RandomRecipes from 'containers/RandomRecipes'
+import RecipesWithAliments from 'containers/RecipesWithAliments'
 
 import styled from 'styled-components'
 
@@ -45,9 +46,7 @@ export class App extends React.PureComponent {
           selectedOption={this.state.selectedOption}
         />
         {this.state.selectedOption === GET_RANDOM_RECIPES && <RandomRecipes />}
-        {this.state.selectedOption === GET_RECIPES_FROM_FOOD_NAME &&
-        <div> {GET_RECIPES_FROM_FOOD_NAME} </div>
-        }
+        {this.state.selectedOption === GET_RECIPES_FROM_FOOD_NAME && <RecipesWithAliments />}
       </AppContainer>
     )
   }
