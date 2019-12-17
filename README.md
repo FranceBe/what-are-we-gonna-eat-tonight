@@ -1,4 +1,4 @@
-# what-are-we-gonna-eat-tonight 
+# what-are-we-gonna-eat-tonight  ![](https://img.shields.io/github/workflow/status/FranceBe/what-are-we-gonna-eat-tonight/NodeJS)
 
 This is a project with an express server and a react front end (with webpack and babel),
 that is tested with jest.
