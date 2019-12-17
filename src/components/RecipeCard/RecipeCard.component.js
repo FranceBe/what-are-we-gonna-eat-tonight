@@ -9,12 +9,9 @@ export const CardContainer = styled.div`
   border: ${spaces.xtraSmall} solid ${colors.primary_dark};
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   ${mediaMin.md(css`
-    width: 45%;
-  `)};
-  ${mediaMin.lg(css`
-    width: 30%;
+    width: 90%;
   `)};
 `
 export const Title = styled.div`

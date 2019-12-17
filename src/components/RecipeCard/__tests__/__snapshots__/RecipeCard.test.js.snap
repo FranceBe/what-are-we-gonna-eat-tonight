@@ -11,18 +11,12 @@ exports[`RecipeCard style-components CardContainer should match snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
 }
 
 @media (min-width:48em) {
   .c0 {
-    width: 45%;
-  }
-}
-
-@media (min-width:62em) {
-  .c0 {
-    width: 30%;
+    width: 90%;
   }
 }
 
