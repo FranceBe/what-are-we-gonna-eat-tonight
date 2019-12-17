@@ -1,4 +1,5 @@
 const express = require('express')
+const chalk = require('chalk')
 const cors = require('cors')
 const path = require('path')
 const bodyParser = require('body-parser')
@@ -33,10 +34,10 @@ app.get('/api/puppy', (req, res) => {
   if (req.query.q && !req.query.p) {
     url = `${baseUrl}/?q=${req.query.q}`
   }
-  if(!req.query.q && req.query.p) {
+  if (!req.query.q && req.query.p) {
     url = `${baseUrl}/?p=${req.query.p}`
   }
-  if(req.query.q && req.query.p) {
+  if (req.query.q && req.query.p) {
     url = `${baseUrl}/?q=${req.query.q}&p=${req.query.p}`
   }
 
@@ -55,5 +56,11 @@ app.get('/', (req, res) => {
 
 
 app.listen(port, function () {
-  console.log('App listening on port: ' + port)
+  // eslint-disable-next-line max-len
+  console.log(`Hello :) \n The server ${chalk.greenBright('started')} and the app listening on port: ${port} ${chalk.greenBright('✓')}`)
+})
+
+process.on('SIGINT', () => {
+  console.log(`\n ${chalk.red('㊀')} You ${chalk.red('stopped')} server :) \n Goodbye !`)
+  process.exit()
 })
