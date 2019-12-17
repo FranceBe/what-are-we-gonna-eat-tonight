@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RandomRecipes styled-components RecipeCardsContainer should match snapshot 1`] = `
+exports[`RandomRecipes styled-components ButtonsContainer should match snapshot 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9,14 +9,10 @@ exports[`RandomRecipes styled-components RecipeCardsContainer should match snaps
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 20px 0;
+}
+
+.c0 button:not(:last-of-type) {
+  margin-right: 10px;
 }
 
 <div

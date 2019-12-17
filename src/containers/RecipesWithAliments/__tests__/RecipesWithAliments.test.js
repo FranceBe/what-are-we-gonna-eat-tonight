@@ -3,8 +3,9 @@ import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
 import RecipesWithAliments, {
   InputAndButtonContainer,
-  BurgerButtonsContainer,
-  NotFoundMessage
+  TitleAndButtonsContainer,
+  NotFoundMessage,
+  ButtonsContainer
 } from 'containers/RecipesWithAliments'
 import Input from 'components/Input'
 import ButtonBurgerShape from 'components/ButtonBurgerShape'
@@ -13,6 +14,29 @@ import RecipeCard from 'components/RecipeCard'
 import * as randomService from 'services/random.service'
 
 describe('RecipesWithAliments', () => {
+  const listOfRecipes = [
+    {
+      title: 'Chocolate Cake',
+      href: 'http://siteweb.site.web',
+      ingredients: 'chocolat, cake, chocolate cake',
+      thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg',
+    },
+    {
+      title: 'Chocolate Cheese Cake',
+      href: 'http://cheese.cake',
+      ingredients: 'chocolate, cheese, cake',
+      thumbnail: '',
+    }
+  ]
+  let getRandomIntSpy
+  beforeAll(() => {
+    getRandomIntSpy =
+      jest.spyOn(randomService, 'getRandomInt').mockImplementation(() => 15)
+    fetch.mockResponse(JSON.stringify({ results: [...listOfRecipes] }))
+  })
+  afterAll(() => {
+    jest.resetAllMocks()
+  })
   describe('component style', () => {
     describe('InputAndButtonContainer', () => {
       it('should match snapshot', () => {
@@ -20,16 +44,22 @@ describe('RecipesWithAliments', () => {
         expect(InputAndButtonContainerTree).toMatchSnapshot()
       })
     })
-    describe('BurgerButtonsContainer', () => {
+    describe('TitleAndButtonsContainer', () => {
       it('should match snapshot', () => {
-        const BurgerButtonsContainerTree = renderer.create(<BurgerButtonsContainer/>).toJSON()
-        expect(BurgerButtonsContainerTree).toMatchSnapshot()
+        const TitleAndButtonsContainerTree = renderer.create(<TitleAndButtonsContainer/>).toJSON()
+        expect(TitleAndButtonsContainerTree).toMatchSnapshot()
       })
     })
     describe('NotFoundMessage', () => {
       it('should match snapshot', () => {
         const NotFoundMessageTree = renderer.create(<NotFoundMessage/>).toJSON()
         expect(NotFoundMessageTree).toMatchSnapshot()
+      })
+    })
+    describe('ButtonsContainer', () => {
+      it('should match snapshot', () => {
+        const ButtonsContainerTree = renderer.create(<ButtonsContainer/>).toJSON()
+        expect(ButtonsContainerTree).toMatchSnapshot()
       })
     })
   })
@@ -53,17 +83,25 @@ describe('RecipesWithAliments', () => {
         expect(RecipesWithAlimentsWrapper.find(Input).props().onChange)
           .toBe(RecipesWithAlimentsWrapper.instance().handleChange)
       })
-      it('should render BurgerButtonsContainer, H2 and ButtonBurgerShape with props', () => {
+      it('should render TitleAndButtonsContainer, H2 and 3 ButtonBurgerShape with props', () => {
         const RecipesWithAlimentsWrapper = shallow(<RecipesWithAliments/>)
-        expect(RecipesWithAlimentsWrapper.find(BurgerButtonsContainer)).toHaveLength(1)
+        expect(RecipesWithAlimentsWrapper.find(TitleAndButtonsContainer)).toHaveLength(1)
         expect(RecipesWithAlimentsWrapper.find(H2)).toHaveLength(1)
         expect(RecipesWithAlimentsWrapper.find(H2).dive().text())
           .toBe('...combien voulez vous de proppositions ?')
-        expect(RecipesWithAlimentsWrapper.find(ButtonBurgerShape)).toHaveLength(1)
-        expect(RecipesWithAlimentsWrapper.find(ButtonBurgerShape).dive().text())
+        expect(RecipesWithAlimentsWrapper.find(ButtonBurgerShape)).toHaveLength(3)
+        expect(RecipesWithAlimentsWrapper.find(ButtonBurgerShape).at(0).dive().text())
+          .toBe(' 1 ')
+        expect(RecipesWithAlimentsWrapper.find(ButtonBurgerShape).at(1).dive().text())
+          .toBe(' 5 ')
+        expect(RecipesWithAlimentsWrapper.find(ButtonBurgerShape).at(2).dive().text())
           .toBe(' 10 ')
-        expect(RecipesWithAlimentsWrapper.find(ButtonBurgerShape).props().onClick)
-          .toBe(RecipesWithAlimentsWrapper.instance().handleSubmit)
+      })
+      it('should call getRandomRecipes when a BurgerButton is clicked', () => {
+        const RecipesWithAlimentsWrapper = shallow(<RecipesWithAliments/>)
+        const getRandomRecipesSpy = jest.spyOn(RecipesWithAlimentsWrapper.instance(), 'getRandomRecipes')
+        RecipesWithAlimentsWrapper.find(ButtonBurgerShape).at(0).props().onClick()
+        expect(getRandomRecipesSpy).toHaveBeenCalledTimes(1)
       })
       it('should not render any RecipeCard', () => {
         const RecipesWithAlimentsWrapper = shallow(<RecipesWithAliments/>)
@@ -132,49 +170,26 @@ describe('RecipesWithAliments', () => {
         expect(RecipesWithAlimentsWrapper.state().ingredient).toBe('My Ingredient')
       })
     })
-    describe('handleSubmit', () => {
-      const listOfRecipes = [
-        {
-          title: 'Chocolate Cake',
-          href: 'http://siteweb.site.web',
-          ingredients: 'chocolat, cake, chocolate cake',
-          thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/d/df/Chocolate_cake.jpg',
-        },
-        {
-          title: 'Chocolate Cheese Cake',
-          href: 'http://cheese.cake',
-          ingredients: 'chocolate, cheese, cake',
-          thumbnail: '',
-        }
-      ]
-      let getRandomIntSpy
-      beforeAll(() => {
-        getRandomIntSpy =
-          jest.spyOn(randomService, 'getRandomInt').mockImplementation(() => 15)
-        fetch.mockResponse(JSON.stringify({ results: [...listOfRecipes] }))
-      })
-      afterAll(() => {
-        jest.resetAllMocks()
-      })
+    describe('getRandomRecipes', () => {
       describe('ingredient is correctly filled', () => {
         it('should call fetch with api filled with random page and ingredient', () => {
           const RecipesWithAlimentsWrapper = shallow(<RecipesWithAliments/>)
           RecipesWithAlimentsWrapper.setState({ ingredient: 'chocolate' })
-          RecipesWithAlimentsWrapper.instance().handleSubmit()
+          RecipesWithAlimentsWrapper.instance().getRandomRecipes(10)
           expect(getRandomIntSpy).toHaveBeenCalledTimes(1)
           expect(getRandomIntSpy).toHaveReturnedWith(15) // output is mocked in beforeAll
           expect(fetch).toHaveBeenCalledTimes(1)
-          expect(fetch).toHaveBeenCalledWith("api/puppy/?q=chocolate&p=15")
+          expect(fetch).toHaveBeenCalledWith('api/puppy/?q=chocolate&p=15')
         })
       })
       describe('ingredient is not filled', () => {
         it('should call fetch with api filled with only random page', () => {
           const RecipesWithAlimentsWrapper = shallow(<RecipesWithAliments/>)
-          RecipesWithAlimentsWrapper.instance().handleSubmit()
+          RecipesWithAlimentsWrapper.instance().getRandomRecipes()
           expect(getRandomIntSpy).toHaveBeenCalledTimes(1)
           expect(getRandomIntSpy).toHaveReturnedWith(15) // output is mocked in beforeAll
           expect(fetch).toHaveBeenCalledTimes(1)
-          expect(fetch).toHaveBeenCalledWith("api/puppy/?p=15")
+          expect(fetch).toHaveBeenCalledWith('api/puppy/?p=15')
         })
       })
     })

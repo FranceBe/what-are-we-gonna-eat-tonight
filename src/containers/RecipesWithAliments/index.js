@@ -1,10 +1,17 @@
 import RecipesWithAlimentsContainer, {
   RecipesWithAliments,
   InputAndButtonContainer,
-  BurgerButtonsContainer,
-  NotFoundMessage
+  TitleAndButtonsContainer,
+  NotFoundMessage,
+  ButtonsContainer
 } from 'containers/RecipesWithAliments/RecipesWithAliments.container'
 
-export { RecipesWithAliments, InputAndButtonContainer, BurgerButtonsContainer, NotFoundMessage }
+export {
+  RecipesWithAliments,
+  InputAndButtonContainer,
+  TitleAndButtonsContainer,
+  NotFoundMessage,
+  ButtonsContainer
+}
 
 export default RecipesWithAlimentsContainer

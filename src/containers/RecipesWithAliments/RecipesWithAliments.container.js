@@ -4,7 +4,7 @@ import H2 from 'components/H2'
 import Input, { InputContainer } from 'components/Input'
 import ButtonBurgerShape from 'components/ButtonBurgerShape'
 import RecipeCard from 'components/RecipeCard'
-import { getRandomInt } from 'services/random.service'
+import { getRandomInt, getRandomNItems } from 'services/random.service'
 import { RecipeCardsContainer } from 'components/RecipeCardsContainer'
 import { spaces, colors } from 'styles/variables'
 
@@ -16,13 +16,21 @@ export const InputAndButtonContainer = styled.div`
     flex: 1 1 30%;
   }
 `
-
-export const BurgerButtonsContainer = styled.div`
+export const TitleAndButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1 1 30%;
 `
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  & button:not(:last-of-type) {
+    margin-right: 10px;
+  }
+`
+
 export const NotFoundMessage = styled.div`
   margin: ${spaces.medium};
   color: ${colors.tertiary_default};
@@ -45,14 +53,17 @@ export class RecipesWithAliments extends React.PureComponent {
     this.setState({ ingredient: event.target.value })
   }
 
-  handleSubmit = () => {
+  getRandomRecipes = n => {
     const randomPage = getRandomInt(50)
     const url = this.state.ingredient ?
       `api/puppy/?q=${this.state.ingredient}&p=${randomPage}` :
       `api/puppy/?p=${randomPage}`
     fetch(url)
       .then(res => res.json())
-      .then(data => this.setState({ listOfRecipes: data.results, noRecipeFound: data.results.length === 0 }))
+      .then(data => {
+        const listOfRecipes = getRandomNItems(data.results, n)
+        this.setState({ listOfRecipes, noRecipeFound: data.results.length === 0 })
+      })
       .catch(err => {
         throw Error(err)
       })
@@ -68,11 +79,14 @@ export class RecipesWithAliments extends React.PureComponent {
             value={this.state.ingredient}
             onChange={this.handleChange}
           />
-          <BurgerButtonsContainer>
+          <TitleAndButtonsContainer>
             <H2>...combien voulez vous de proppositions ?</H2>
-            <ButtonBurgerShape
-              onClick={this.handleSubmit}> 10 </ButtonBurgerShape>
-          </BurgerButtonsContainer>
+            <ButtonsContainer>
+              <ButtonBurgerShape onClick={() => this.getRandomRecipes(1)}> 1 </ButtonBurgerShape>
+              <ButtonBurgerShape onClick={() => this.getRandomRecipes(5)}> 5 </ButtonBurgerShape>
+              <ButtonBurgerShape onClick={() => this.getRandomRecipes(10)}> 10 </ButtonBurgerShape>
+            </ButtonsContainer>
+          </TitleAndButtonsContainer>
         </InputAndButtonContainer>
         {this.state.listOfRecipes.length > 0 &&
         <RecipeCardsContainer>

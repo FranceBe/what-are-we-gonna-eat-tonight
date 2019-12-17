@@ -1,10 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
 import H2 from 'components/H2'
 import ButtonBurgerShape from 'components/ButtonBurgerShape'
 import RecipeCard from 'components/RecipeCard'
-import { getRandomInt } from 'services/random.service'
+import { getRandomInt, getRandomNItems } from 'services/random.service'
 import { RecipeCardsContainer } from 'components/RecipeCardsContainer'
 
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  & button:not(:last-of-type) {
+    margin-right: 10px;
+  }
+`
 
 export class RandomRecipes extends React.PureComponent {
   constructor(props) {
@@ -14,11 +22,14 @@ export class RandomRecipes extends React.PureComponent {
     }
   }
 
-  getRandomRecipes = () => {
+  getRandomRecipes = n => {
     const randomPage = getRandomInt(50)
     fetch(`api/puppy/?p=${randomPage}`)
       .then(res => res.json())
-      .then(data => this.setState({ listOfRecipes: data.results }))
+      .then(data => {
+        const listOfRecipes = getRandomNItems(data.results, n)
+        this.setState({ listOfRecipes })
+      })
       .catch(err => {
         throw Error(err)
       })
@@ -28,7 +39,11 @@ export class RandomRecipes extends React.PureComponent {
     return (
       <>
         <H2> Combien voulez vous de propositions ? </H2>
-        <ButtonBurgerShape onClick={this.getRandomRecipes}> 10 </ButtonBurgerShape>
+        <ButtonsContainer>
+          <ButtonBurgerShape onClick={() => this.getRandomRecipes(1)}> 1 </ButtonBurgerShape>
+          <ButtonBurgerShape onClick={() => this.getRandomRecipes(5)}> 5 </ButtonBurgerShape>
+          <ButtonBurgerShape onClick={() => this.getRandomRecipes(10)}> 10 </ButtonBurgerShape>
+        </ButtonsContainer>
         {this.state.listOfRecipes.length > 0 &&
         <RecipeCardsContainer>
           {this.state.listOfRecipes.map((recipe, i) => {

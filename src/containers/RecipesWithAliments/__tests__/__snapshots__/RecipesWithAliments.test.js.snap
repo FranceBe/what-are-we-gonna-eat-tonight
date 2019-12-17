@@ -1,21 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RecipesWithAliments component style BurgerButtonsContainer should match snapshot 1`] = `
+exports[`RecipesWithAliments component style ButtonsContainer should match snapshot 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1 1 30%;
-  -ms-flex: 1 1 30%;
-  flex: 1 1 30%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 button:not(:last-of-type) {
+  margin-right: 10px;
 }
 
 <div
@@ -50,6 +47,29 @@ exports[`RecipesWithAliments component style NotFoundMessage should match snapsh
 .c0 {
   margin: 10px;
   color: #EE6663;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`RecipesWithAliments component style TitleAndButtonsContainer should match snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 1 30%;
+  -ms-flex: 1 1 30%;
+  flex: 1 1 30%;
 }
 
 <div

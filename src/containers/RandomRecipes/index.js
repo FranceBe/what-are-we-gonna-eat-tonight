@@ -1,7 +1,7 @@
 import RandomRecipesContainer,
-{ RandomRecipes, RecipeCardsContainer }
+{ RandomRecipes, ButtonsContainer }
   from 'containers/RandomRecipes/RandomRecipes.container'
 
-export { RandomRecipes, RecipeCardsContainer }
+export { RandomRecipes, ButtonsContainer }
 
 export default RandomRecipesContainer
