@@ -3,28 +3,19 @@ import H1 from 'components/H1'
 import SelectionButton from 'components/SelectionButton'
 import RandomRecipes from 'containers/RandomRecipes'
 import RecipesWithAliments from 'containers/RecipesWithAliments'
-
 import styled from 'styled-components'
 
-const AppContainer = styled.div`
+export const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 `
 
-const GET_RANDOM_RECIPES = 'Donnez moi des idées!'
-const GET_RECIPES_FROM_FOOD_NAME = 'J\'ai une envie de...'
-export class App extends React.PureComponent {
-  // componentDidMount() {
-  //   fetch('api/puppy')
-  //     .then(res => res.json())
-  //     .then(data => console.log(data.results))
-  //     .catch(err => {
-  //       throw Error(err)
-  //     })
-  // }
+export const GET_RANDOM_RECIPES = 'Donnez moi des idées!'
+export const GET_RECIPES_FROM_FOOD_NAME = 'J\'ai une envie de...'
 
+export class App extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
