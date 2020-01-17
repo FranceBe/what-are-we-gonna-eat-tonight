@@ -13,6 +13,10 @@
     "storybook": "start-storybook -p 9001 -c storybook",
     "lint": "eslint . --ext .js"
   },
+  "engines": {
+    "npm": ">=6",
+    "node": ">=12"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint",
@@ -24,12 +28,10 @@
   "dependencies": {
     "babel-node": "0.0.1-security",
     "body-parser": "1.18.3",
-    "chalk": "^3.0.0",
+    "chalk": "3.0.0",
     "cors": "2.8.5",
     "dotenv": "6.2.0",
     "express": "4.16.4",
-    "install": "^0.13.0",
-    "npm": "^6.13.4",
     "path": "0.12.7",
     "react": "16.12.0",
     "request": "2.88.0"
@@ -57,7 +59,7 @@
     "enzyme-adapter-react-16": "1.15.1",
     "eslint": "6.7.2",
     "eslint-plugin-jest": "23.1.1",
-    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react": "7.17.0",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
     "husky": "3.1.0",
