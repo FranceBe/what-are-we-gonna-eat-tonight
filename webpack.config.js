@@ -44,7 +44,6 @@ module.exports = {
   resolve: {
     modules: ['src', 'node_modules'],
     alias: {
-      styles: path.join(__dirname, 'styles'),
       assets: path.join(__dirname, 'assets'),
     }
   },

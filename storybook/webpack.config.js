@@ -15,7 +15,6 @@ module.exports = async ({ config }) => {
   }
   config.resolve.modules.push(resolve(baseDir, '../src'), resolve(baseDir, '../node_modules'))
   config.resolve.alias = {
-    styles: resolve(baseDir, '../styles'),
     assets: resolve(baseDir, '../assets'),
   }
 

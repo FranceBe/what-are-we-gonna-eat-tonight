@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Media style mixin mediaMax Given mediaMax is called on existing size Should return max media query and content 1`] = `
+Array [
+  "@media (max-width:",
+  "47.9375",
+  "em){",
+  "test",
+  "}",
+]
+`;
+
+exports[`Media style mixin mediaMin Given mediaMin is called on existing size Should return min media query and content 1`] = `
+Array [
+  "@media (min-width:",
+  "36",
+  "em){",
+  "test",
+  "}",
+]
+`;
+
+exports[`Media style mixin mediaOnly Given mediaOnly is called on existing max size Should return max media query and content 1`] = `
+Array [
+  "@media ",
+  "(max-width: 47.9375em)",
+  "{",
+  "test",
+  "}",
+]
+`;
+
+exports[`Media style mixin mediaOnly Given mediaOnly is called on existing min and max size Should return min and max media query and content 1`] = `
+Array [
+  "@media ",
+  "(min-width: 36em)",
+  " and ",
+  "(max-width: 61.9375em)",
+  "{",
+  "test",
+  "}",
+]
+`;
+
+exports[`Media style mixin mediaOnly Given mediaOnly is called on existing min size Should return min media query and content 1`] = `
+Array [
+  "@media ",
+  "(min-width: 75em)",
+  "{",
+  "test",
+  "}",
+]
+`;
