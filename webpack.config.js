@@ -37,7 +37,11 @@ module.exports = {
       },
       {
         loader: 'file-loader?name=assets/img/[name].[ext]',
-        test: /\.(png|ttf|jpg|gif|ico)$/,
+        test: /\.(png|jpg|gif|ico)$/,
+      },
+      {
+        loader: 'file-loader?name=assets/fonts/[name].[ext]',
+        test: /\.ttf$/,
       },
     ],
   },

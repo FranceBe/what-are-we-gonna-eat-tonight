@@ -2,8 +2,8 @@ import { createGlobalStyle } from 'styled-components'
 import { colors, spaces } from 'styles/variables'
 
 // PlayfairDisplay
-import PlayfairDisplaytRegular from 'assets/fonts/PlayfairDisplay-Regular.ttf'
-import PlayfairDisplayBold from 'assets/fonts/PlayfairDisplay-Bold.ttf'
+import PlayfairDisplaytRegular from 'fonts/PlayfairDisplay-Regular.ttf'
+import PlayfairDisplayBold from 'fonts/PlayfairDisplay-Bold.ttf'
 
 export const GlobalStyle = createGlobalStyle`
 

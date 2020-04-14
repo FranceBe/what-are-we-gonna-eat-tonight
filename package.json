@@ -4,7 +4,7 @@
   "description": "did you ever feel like an empty plastic bag because you didn't have any idea of what to cook or what to eat, and then your family should starve because you are just not enough creative ? What if you just had to click a button to have great ideas of recipes ? Here you go.",
   "main": "server/index.js",
   "scripts": {
-    "start": "webpack --mode production && cross-env NODE_ENV=production node server/index.js",
+    "start": "npm run build && cross-env NODE_ENV=production node server/index.js",
     "start:dev": "cross-env NODE_ENV=development nodemon server/index.js",
     "build": "webpack --mode production",
     "test": "cross-env NODE_ENV=test jest --passWithNoTests",
